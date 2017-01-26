@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.Logic.Real", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.Test.Unit", "Boilerplate.Test.Unit\Boilerplate.Test.Unit.csproj", "{21120825-D6E0-4E5C-B67F-02E8557DADF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.UI.Console", "Boilerplate.UI.Console\Boilerplate.UI.Console.csproj", "{F16ED85F-ABA8-48B0-98E1-9AF7FC789DD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boilerplate.UI.Console.Test", "Boilerplate.UI.Console.Test\Boilerplate.UI.Console.Test.csproj", "{D23DBD09-2E88-463B-AE8A-2C74FEC44EAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{21120825-D6E0-4E5C-B67F-02E8557DADF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21120825-D6E0-4E5C-B67F-02E8557DADF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21120825-D6E0-4E5C-B67F-02E8557DADF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16ED85F-ABA8-48B0-98E1-9AF7FC789DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16ED85F-ABA8-48B0-98E1-9AF7FC789DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16ED85F-ABA8-48B0-98E1-9AF7FC789DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16ED85F-ABA8-48B0-98E1-9AF7FC789DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23DBD09-2E88-463B-AE8A-2C74FEC44EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23DBD09-2E88-463B-AE8A-2C74FEC44EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23DBD09-2E88-463B-AE8A-2C74FEC44EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23DBD09-2E88-463B-AE8A-2C74FEC44EAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,6 +42,20 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Boilerplate.Common\Boilerplate.Common.csproj">
+      <Project>{ed541777-7227-4801-8456-b55c3cd236be}</Project>
+      <Name>Boilerplate.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Boilerplate.Logic.Interfaces\Boilerplate.Logic.Interfaces.csproj">
+      <Project>{ece5f481-b238-4211-a7b8-01b8dcd47dca}</Project>
+      <Name>Boilerplate.Logic.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Boilerplate.Models\Boilerplate.Models.csproj">
+      <Project>{a2917a3e-f5da-4da9-ac41-45f80db2d53f}</Project>
+      <Name>Boilerplate.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
