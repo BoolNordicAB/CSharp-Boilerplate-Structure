@@ -2,9 +2,9 @@
 {
     using System;
 
-    public class NotFoundException : Exception
+    public class InvalidIdentifierException : Exception
     {
-        public NotFoundException(string format, params object[] arguments)
+        public InvalidIdentifierException(string format, params object[] arguments)
         : base(string.Format(format, arguments))
         {
         }

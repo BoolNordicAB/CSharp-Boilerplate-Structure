@@ -1,7 +1,9 @@
 ﻿namespace Boilerplate.Common
 {
+    using System;
+
     public interface IIdentifiable
     {
-        string Id { get; }
+        int Identifier { get; }
     }
 }

@@ -1,0 +1,12 @@
+﻿[
+    {
+        "Identifier": 1,
+        "Name": "Milk",
+        "BestBeforeDate": "2017-01-26T19:51:15Z"
+    },
+    {
+        "Identifier": 2,
+        "Name": "Cucumber",
+        "BestBeforeDate": "2016-01-26T19:51:15Z"
+    }
+]

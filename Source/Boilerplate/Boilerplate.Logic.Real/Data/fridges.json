@@ -1,0 +1,10 @@
+﻿[
+    {
+        "Identifier": 1,
+        "Location": "Kitchen",
+        "FoodstuffIdentifiers": [
+            1,
+            2
+        ]
+    }
+]

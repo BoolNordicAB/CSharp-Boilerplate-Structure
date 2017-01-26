@@ -2,9 +2,9 @@
 {
     using System;
 
-    public class NotFoundException : Exception
+    public class AlreadyExistsException : Exception
     {
-        public NotFoundException(string format, params object[] arguments)
+        public AlreadyExistsException(string format, params object[] arguments)
         : base(string.Format(format, arguments))
         {
         }

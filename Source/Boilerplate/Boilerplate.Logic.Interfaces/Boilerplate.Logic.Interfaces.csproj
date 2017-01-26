@@ -40,12 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabase.cs" />
+    <Compile Include="IDataset.cs" />
+    <Compile Include="IFridgeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Boilerplate.Common\Boilerplate.Common.csproj">
       <Project>{ed541777-7227-4801-8456-b55c3cd236be}</Project>
       <Name>Boilerplate.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Boilerplate.Models\Boilerplate.Models.csproj">
+      <Project>{a2917a3e-f5da-4da9-ac41-45f80db2d53f}</Project>
+      <Name>Boilerplate.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
