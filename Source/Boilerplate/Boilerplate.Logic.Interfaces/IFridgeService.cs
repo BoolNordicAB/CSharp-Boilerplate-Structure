@@ -6,10 +6,10 @@
 
     public interface IFridgeService
     {
-        IEnumerable<Foodstuff> GetAllFoodstuffsForFridge(Guid fridgeId);
+        IEnumerable<Foodstuff> GetAllFoodstuffsForFridge(int fridgeId);
 
-        IEnumerable<Foodstuff> GetAllPerishedFoodstuffsForFridge(Guid fridgeId);
+        IEnumerable<Foodstuff> GetAllPerishedFoodstuffsForFridge(int fridgeId);
 
-        void PurgeAllPerishedFoodstuffsForFridge(Guid fridgeId);
+        void PurgeAllPerishedFoodstuffsForFridge(int fridgeId);
     }
 }

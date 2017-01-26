@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IDatabase.cs" />
     <Compile Include="IDataset.cs" />
+    <Compile Include="IFoodstuffService.cs" />
     <Compile Include="IFridgeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

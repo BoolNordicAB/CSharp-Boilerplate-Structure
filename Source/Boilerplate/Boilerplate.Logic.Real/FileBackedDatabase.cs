@@ -11,9 +11,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Database : IDatabase
+    public class FileBackedDatabase : IDatabase
     {
-        public Database()
+        public FileBackedDatabase()
         {
             this.Foodstuffs = new FileBackedDataset<Foodstuff>(@"Data\foodstuffs.json");
             this.Fridges = new FileBackedDataset<Fridge>(@"Data\fridges.json");

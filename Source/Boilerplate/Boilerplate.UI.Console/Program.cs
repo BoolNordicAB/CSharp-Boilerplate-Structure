@@ -16,6 +16,8 @@
         {
             InitInjector();
             var db = IocContainer.GetInstance<IDatabase>();
+            var foodstuffSvc = IocContainer.GetInstance<IFoodstuffService>();
+
             foreach (var fridge in db.Fridges.ReadAll())
             {
                 Console.WriteLine("The fridge in the {0} contains:", fridge.Location);
@@ -23,7 +25,7 @@
                 var contents = fridge.FoodstuffIdentifiers.Select(id => db.Foodstuffs.Read(id));
                 foreach (var foodstuff in contents)
                 {
-                    Console.WriteLine("\t{0}", foodstuff.Name);
+                    Console.WriteLine("\t[{0}] {1}", foodstuffSvc.IsEatable(foodstuff) ? "OK" : "Bad", foodstuff.Name);
                 }
             }
 
@@ -34,7 +36,9 @@
         private static void InitInjector()
         {
             // Configure the container (register concrete implementations to use where interfaces are requested)
-            IocContainer.Register<IDatabase, Logic.Real.Database>(Lifestyle.Singleton);
+            IocContainer.Register<IDatabase, Logic.Real.FileBackedDatabase>(Lifestyle.Singleton);
+            IocContainer.Register<IFridgeService, Logic.Real.FridgeService>(Lifestyle.Singleton);
+            IocContainer.Register<IFoodstuffService, Logic.Real.FoodstuffService>(Lifestyle.Singleton);
 
             // Optionally verify the container's configuration.
             IocContainer.Verify();
