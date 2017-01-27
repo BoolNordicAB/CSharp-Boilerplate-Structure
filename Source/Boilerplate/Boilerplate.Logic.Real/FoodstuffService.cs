@@ -7,6 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using Models;
+    using Common.Exceptions;
 
     public class FoodstuffService : IFoodstuffService
     {
@@ -29,7 +30,13 @@
 
         public void RecycleFoodstuff(Foodstuff foodstuff)
         {
-            var parentFridge = this.db.Fridges.ReadAll().First(fridge => fridge.FoodstuffIdentifiers.Contains(foodstuff.Identifier));
+            var parentFridge = this.db.Fridges.ReadAll()
+                .FirstOrDefault(fridge => fridge.FoodstuffIdentifiers.Contains(foodstuff.Identifier));
+            if (parentFridge == null)
+            {
+                throw new NotFoundException("No fridge containing foodstuff[Id]={0} found.", foodstuff.Identifier);
+            }
+
             parentFridge.FoodstuffIdentifiers.Remove(foodstuff.Identifier);
             this.db.Fridges.Update(parentFridge);
             this.db.Foodstuffs.Delete(foodstuff.Identifier);

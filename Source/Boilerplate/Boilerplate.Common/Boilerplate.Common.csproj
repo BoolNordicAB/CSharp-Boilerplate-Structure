@@ -43,6 +43,7 @@
     <Compile Include="Exceptions\InvalidIdentifierException.cs" />
     <Compile Include="Exceptions\AlreadyExistsException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="IIdentifiable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

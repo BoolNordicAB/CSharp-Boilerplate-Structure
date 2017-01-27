@@ -21,12 +21,12 @@
 
             foreach (var fridge in db.Fridges.ReadAll())
             {
-                Console.WriteLine("The fridge in the {0} contains:", fridge.Location);
+                Console.WriteLine("The fridge#{0} in the {1} contains:", fridge.Identifier, fridge.Location);
 
                 var contents = fridge.FoodstuffIdentifiers.Select(id => db.Foodstuffs.Read(id));
                 foreach (var foodstuff in contents)
                 {
-                    Console.WriteLine("\t[{0}] {1}", foodstuffSvc.IsEatable(foodstuff) ? "OK" : "Bad", foodstuff.Name);
+                    Console.WriteLine("\t[{0}] {1}#{2}", foodstuffSvc.IsEatable(foodstuff) ? "OK" : "Bad", foodstuff.Name, foodstuff.Identifier);
                 }
             }
 

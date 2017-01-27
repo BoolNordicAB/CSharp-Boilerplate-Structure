@@ -19,8 +19,8 @@
             this.Fridges = new FileBackedDataset<Fridge>(@"Data\fridges.json");
         }
 
-        public IDataset<Foodstuff> Foodstuffs { get; set; }
+        public IDataset<Foodstuff> Foodstuffs { get; private set; }
 
-        public IDataset<Fridge> Fridges { get; set; }
+        public IDataset<Fridge> Fridges { get; private set; }
     }
 }
