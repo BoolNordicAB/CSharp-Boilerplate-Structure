@@ -9,6 +9,7 @@
     using SimpleInjector;
     using System.Collections.Generic;
     using Models;
+    using System.Linq;
 
     [TestClass]
     public class FridgeServiceTest
@@ -17,10 +18,7 @@
         {
             get
             {
-                var iocContainer = new Container();
-
                 var nowDate = new DateTime(2016, 10, 10);
-
                 var initialFridges = new List<Fridge>
                 {
                     new Fridge
@@ -31,17 +29,15 @@
                     }
                 };
 
+                var iocContainer = new Container();
                 iocContainer.Register<IDatabase>(
                     () => new MockDatabase
                     {
                         Fridges = new MockDataset<Fridge>(initialFridges)
                     });
-
                 iocContainer.Register<IFoodstuffService>(() => new MockFoodstuffService(nowDate));
-
                 iocContainer.Register<IFridgeService, FridgeService>(Lifestyle.Transient);
 
-                // Optionally verify the container's configuration.
                 iocContainer.Verify();
 
                 return iocContainer.GetInstance<IFridgeService>();
@@ -49,9 +45,10 @@
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void Test_GetAllFoodstuffsForFridge_should_return_all_foodstuffs_for_the_fridge()
         {
-            this.UnitUnderTest.PurgeAllPerishedFoodstuffsForFridge(1);
+            var allFoodstuff = this.UnitUnderTest.GetAllFoodstuffsForFridge(1);
+            Assert.AreEqual(allFoodstuff.Count(), 0);
         }
     }
 }
