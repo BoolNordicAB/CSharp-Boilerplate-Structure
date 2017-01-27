@@ -26,7 +26,7 @@ test project. The core projects are:
 - Logic.Real
 - Logic.Simulated
 
-The (primary) dependency graph between these look like:
+The (primary) dependency graph between these looks like:
 
 ```
                             +------------------+
@@ -78,6 +78,9 @@ Each of the above projects have a rather defined set of rules regarding what one
 should put, and *not* to put in them, as follows:
 
 
+Core
+---
+
 #### `Common`
 
 This project should contain generic functionality, that is agnostic to the
@@ -108,10 +111,14 @@ would implement that interface in `Logic.Real` and/or `Logic.Simulated`.
 #### `Logic.Real`
 
 
+Core/test
 ---
 
 #### `Test.Unit`
 
+
+Application
+---
 
 #### `UI.Console`
 
