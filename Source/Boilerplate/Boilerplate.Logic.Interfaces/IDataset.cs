@@ -5,7 +5,7 @@
     using System.Collections.Generic;
 
     public interface IDataset<T>
-        where T : IIdentifiable
+        where T : IIdentifiable<int>
     {
         void Create(T model);
 

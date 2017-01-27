@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Boilerplate.Models
 {
-    public abstract class BaseModel : IIdentifiable
+    public abstract class BaseModel : IIdentifiable<int>
     {
         public int Identifier { get; set; }
 

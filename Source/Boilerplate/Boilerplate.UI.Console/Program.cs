@@ -16,6 +16,7 @@
         {
             InitInjector();
             var db = IocContainer.GetInstance<IDatabase>();
+            var fridgeSvc = IocContainer.GetInstance<IFridgeService>();
             var foodstuffSvc = IocContainer.GetInstance<IFoodstuffService>();
 
             foreach (var fridge in db.Fridges.ReadAll())

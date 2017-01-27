@@ -10,7 +10,7 @@
     using Common.Exceptions;
 
     internal class FileBackedDataset<T> : IDataset<T>
-        where T : IIdentifiable
+        where T : IIdentifiable<int>
     {
         private readonly string relativeFileName;
 

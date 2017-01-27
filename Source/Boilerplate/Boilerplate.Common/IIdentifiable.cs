@@ -2,8 +2,9 @@
 {
     using System;
 
-    public interface IIdentifiable
+    public interface IIdentifiable<T>
+        where T : IEquatable<T>
     {
-        int Identifier { get; }
+        T Identifier { get; }
     }
 }
