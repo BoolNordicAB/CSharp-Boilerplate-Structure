@@ -28,7 +28,7 @@ test project. The core projects are:
 
 The (primary) dependency graph between these look like:
 
-
+```
                             +------------------+
                             |                  |
                             | Logic.Real       |
@@ -46,6 +46,7 @@ The (primary) dependency graph between these look like:
                             | Logic.Simulated  |
                             |                  |
                             +------------------+
+```
 
 N.B. the graph above depicts only the primary dependents. E.g. `Logic.Real` 
 depends on `Logic.Interfaces`, because its primary purpose is to implement 
@@ -86,3 +87,33 @@ solution's business requirements. Examples of this kind of functionality is:
 - Exception types that can be used in common situations;
 - Interfaces that can be used in common situations;
 - etc.
+
+
+#### `Models`
+
+All the Models used by the business logic should reside here. Examples include database models, integration models, etc.
+
+
+#### `Logic.Interfaces`
+
+Here, we put interfaces that define how we are able to interact with the
+business logic. E.g. if we want to be able to authenticate users, we would
+define a `IUserService` or something like that in this project, and then we
+would implement that interface in `Logic.Real` and/or `Logic.Simulated`.
+
+
+#### `Logic.Simulated`
+
+
+#### `Logic.Real`
+
+
+---
+
+#### `Test.Unit`
+
+
+#### `UI.Console`
+
+
+#### `UI.Console.Test`
