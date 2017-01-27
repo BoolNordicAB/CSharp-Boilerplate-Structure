@@ -25,6 +25,7 @@ test project. The core projects are:
 - Logic.Interfaces
 - Logic.Real
 - Logic.Simulated
+- (Test.Unit)
 
 The (primary) dependency graph between these looks like:
 
@@ -54,22 +55,23 @@ interfaces found in that project. However, to do that, it needs the models
 defined in `Models`, and most likely elements that are found in the `Common`
 project. Similarly, since some models might implement certain interfaces found
 in `Common`, `Logic.Interfaces` have to have a dependency on `Common`. This is 
-because the dependencies propagate down in the dependency chain.
+because the dependencies propagate down in the dependency chain. The `Test.Unit`
+project depends on all core projects `Test.Unit` contains the unit tests for 
+the logic found in the core projects. In a big project, it might be reasonable 
+to also create a `Test.Integration` project, specifically to only contain code
+that does automated integration tests. 
 
 In addition to the projects above, there are the following also:
 
-- Test.Unit
 - UI.Console
 - UI.Console.Test
 
-All of these depend on, at least, all of the core projects.
-`Test.Unit` contains the unit tests for the logic found in the core projects.
-In a big project, it might be reasonable to also create a `Test.Integration` 
-project, to run automated integration tests. `UI.Console` is the actual 
-application that a user consumes. Examples of other real world applications 
-would be a `UI.API.Web` project and/or a `UI.Graphical.Web` project. The 
-`UI.Console.Test` is a "Coded UI Test" project, that emulates a human user 
-interacting with the application via normal [HIDs](https://en.wikipedia.org/wiki/Human_interface_device).
+All of these depend on, at least, all of the core projects (except the 
+test-projects). `UI.Console` is the actual application that a user consumes. 
+Examples of other real world applications would be a `UI.API.Web` project 
+and/or a `UI.Graphical.Web` project. The `UI.Console.Test` is a "Coded UI Test" 
+project, that emulates a human user interacting with the application via normal 
+[HIDs](https://en.wikipedia.org/wiki/Human_interface_device).
 
 
 ### More in-depth
@@ -110,9 +112,6 @@ would implement that interface in `Logic.Real` and/or `Logic.Simulated`.
 
 #### `Logic.Real`
 
-
-Core/test
----
 
 #### `Test.Unit`
 
