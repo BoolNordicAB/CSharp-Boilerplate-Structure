@@ -67,7 +67,7 @@ In addition to the projects above, there are the following also:
 - UI.Console.Test
 
 All of these depend on, at least, all of the core projects (except the 
-test-projects). `UI.Console` is the actual application that a user consumes. 
+test projects). `UI.Console` is the actual application that a user consumes. 
 Examples of other real world applications would be a `UI.API.Web` project 
 and/or a `UI.Graphical.Web` project. The `UI.Console.Test` is a "Coded UI Test" 
 project, that emulates a human user interacting with the application via normal 
@@ -96,7 +96,12 @@ solution's business requirements. Examples of this kind of functionality is:
 
 #### `Models`
 
-All the Models used by the business logic should reside here. Examples include database models, integration models, etc.
+All the Models used by the business logic should reside here. Examples include 
+database models, integration models, etc. Ideally, this project should not
+contain any logic at all, only definitions. It would be reasonable to create a
+sibling project `Models.Integration` to contain models only relevant for
+3rd party system integration, and limit this project to contain only own
+database models.
 
 
 #### `Logic.Interfaces`
