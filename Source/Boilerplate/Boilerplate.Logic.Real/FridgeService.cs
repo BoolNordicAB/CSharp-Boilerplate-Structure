@@ -35,7 +35,7 @@
         public void PurgeAllPerishedFoodstuffsForFridge(int fridgeId)
         {
             var allPerished = this.GetAllPerishedFoodstuffsForFridge(fridgeId);
-            foreach (var foodstuff in allPerished)
+            foreach (var foodstuff in allPerished.ToList())
             {
                 this.foodstuffSvc.RecycleFoodstuff(foodstuff);
             }

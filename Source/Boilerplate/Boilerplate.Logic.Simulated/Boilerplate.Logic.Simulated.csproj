@@ -54,6 +54,10 @@
       <Project>{ece5f481-b238-4211-a7b8-01b8dcd47dca}</Project>
       <Name>Boilerplate.Logic.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Boilerplate.Logic.Real\Boilerplate.Logic.Real.csproj">
+      <Project>{63cc7d4c-088f-46a9-bc95-af5c0fc7ddee}</Project>
+      <Name>Boilerplate.Logic.Real</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Boilerplate.Models\Boilerplate.Models.csproj">
       <Project>{a2917a3e-f5da-4da9-ac41-45f80db2d53f}</Project>
       <Name>Boilerplate.Models</Name>

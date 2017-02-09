@@ -7,13 +7,16 @@
     using System.Threading.Tasks;
     using Boilerplate.Logic.Interfaces;
     using Models;
+    using Real;
 
     public class MockFoodstuffService : IFoodstuffService
     {
+        private readonly IDatabase db;
         private readonly DateTime dtThatShouldBeUsedAsNow;
 
-        public MockFoodstuffService(DateTime dtThatShouldBeUsedAsNow)
+        public MockFoodstuffService(IDatabase db, DateTime dtThatShouldBeUsedAsNow)
         {
+            this.db = db;
             this.dtThatShouldBeUsedAsNow = dtThatShouldBeUsedAsNow;
         }
 
@@ -29,7 +32,9 @@
 
         public void RecycleFoodstuff(Foodstuff foodstuff)
         {
-            // No-op
+            // Defer logic to real logic
+            var realFoodstuffService = new FoodstuffService(this.db);
+            realFoodstuffService.RecycleFoodstuff(foodstuff);
         }
     }
 }
